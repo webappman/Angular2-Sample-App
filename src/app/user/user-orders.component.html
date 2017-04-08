@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row" *ngIf="user">
+        <h4>Orders for {{ user.firstName | capitalize }} {{ user.lastName | capitalize }}</h4>
+        <br />
+        <table class="table table-striped table-hover orders-table">
+            <tr *ngFor="let order of user.orders;trackBy:ordersTrackBy">
+                <td>{{ order.productName }}</td>
+                <td class="text-right">{{ order.itemCost | currency:'USD':true }}</td>    
+            </tr>
+            <tr class="summary-border">
+                <td>&nbsp;</td>
+                <td class="text-right">{{ user.orderTotal | currency:'USD':true }}</td>
+            </tr>
+        </table>
+        <div *ngIf="!user.orders.length">
+            No orders found
+        </div> 
+    </div>
+    <div *ngIf="!user" class="row">
+        No user found
+    </div>  
+</div>

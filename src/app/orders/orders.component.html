@@ -1,0 +1,43 @@
+<div class="users view indent">
+    <div class="container">
+        <header>
+            <h3>
+                <span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;Orders
+            </h3>
+        </header>
+        <br />
+
+        <div class="container">
+            <div *ngIf="users">
+
+                <div class="row" *ngFor="let user of users;trackBy:trackbyService.user">
+                    <h4>{{ user.firstName | capitalize }} {{ user.lastName | capitalize }}</h4>
+                    <br />
+                    <table *ngIf="user.orders && user.orders.length" class="table table-striped table-hover orders-table">
+                        <tr *ngFor="let order of user.orders;trackBy:trackbyService.order">
+                            <td>{{order.productName}}</td>
+                            <td class="text-right">{{ order.itemCost | currency:'USD':true }}</td>    
+                        </tr>
+                        <tr class="summary-border">
+                            <td>&nbsp;</td>
+                            <td class="text-right">{{ user.orderTotal | currency:'USD':true }}
+                        </tr>
+                    </table>
+                    <div *ngIf="!user.orders || !user.orders.length">
+                        No orders found
+                    </div> 
+                </div>
+
+                <cm-pagination [hidden]="!users"
+                    [totalItems]="totalRecords" 
+                    [pageSize]="pageSize" 
+                    (pageChanged)="pageChanged($event)"></cm-pagination>
+
+            </div>
+            <div *ngIf="!users">
+                No users found
+            </div>
+        </div>
+
+    </div>
+</div>

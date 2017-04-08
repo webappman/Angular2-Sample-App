@@ -1,0 +1,66 @@
+<div class="users view indent">
+    <div class="container">
+        <header>
+            <h3>
+                <span class="glyphicon glyphicon-user"></span>
+                {{ title }}
+            </h3>
+        </header>
+        <br />
+        <div class="row">
+            <div class="col-md-10">
+                <div class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="toolbar-item">
+                            <a (click)="changeDisplayMode(displayModeEnum.Card)" [class.active]="displayMode === displayModeEnum.Card">
+                                <span class="glyphicon glyphicon-th-large"></span> Card View
+                            </a>
+                        </li>
+                        <li class="toolbar-item">
+                            <a (click)="changeDisplayMode(displayModeEnum.Grid)" [class.active]="displayMode === displayModeEnum.Grid">
+                                <span class="glyphicon glyphicon-align-justify"></span> List View
+                            </a>
+                        </li>
+                        <li class="toolbar-item">
+                            <a (click)="changeDisplayMode(displayModeEnum.Map)" [class.active]="displayMode === displayModeEnum.Map">
+                                <span class="glyphicon glyphicon-map-marker"></span> Map View
+                            </a>
+                        </li>
+                        <li class="toolbar-item">
+                            <a routerLink="/users/0/edit">
+                                <span class="glyphicon glyphicon-plus"></span> New User
+                            </a>
+                        </li>
+                    </ul>
+                    <cm-filter-textbox class="navbar-right"
+                     (changed)="filterChanged($event)"></cm-filter-textbox>
+                </div>
+            </div>
+        </div>
+        
+        <cm-users-card 
+          [users]="filteredUsers" 
+          [hidden]="displayMode !== displayModeEnum.Card"></cm-users-card>
+    
+        <cm-users-grid 
+          [users]="filteredUsers" 
+          [hidden]="displayMode !== displayModeEnum.Grid"></cm-users-grid>
+
+        <cm-map *ngIf="filteredUsers.length" 
+            [zoom]="2" 
+            [enabled]="displayMode === displayModeEnum.Map" 
+            [hidden]="displayMode !== displayModeEnum.Map">
+          <cm-map-point 
+            *ngFor="let user of filteredUsers" 
+            [latitude]="user.latitude" 
+            [longitude]="user.longitude"
+            [markerText]="'<h3>' + user.firstName + ' ' + user.lastName + '</a></h3>' + user.city + ', ' + user.state.name"></cm-map-point>
+        </cm-map>
+
+        <cm-pagination
+            [totalItems]="totalRecords" 
+            [pageSize]="pageSize" 
+            (pageChanged)="pageChanged($event)"></cm-pagination>
+          
+    </div>
+</div>

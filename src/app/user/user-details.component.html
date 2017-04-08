@@ -1,0 +1,29 @@
+<div *ngIf="user">
+  <div class="row">
+    <div class="col-md-2">
+      <img src="images/{{user.gender | lowercase}}.png" class="details-image" />
+    </div>
+    <div class="col-md-10">
+      <h4>    
+          {{ user.firstName | capitalize }} {{ user.lastName | capitalize }}&nbsp;          
+      </h4>
+      <br />
+      {{ user.address }}
+      <br />
+      {{ user.city }}, {{ user.state.name }}
+    </div>
+  </div>    
+  <br /><br />
+  <div class="row">
+    <div class="col-md-12">
+      <cm-map [latitude]="user.latitude" 
+           [longitude]="user.longitude" 
+           [zoom]="10" 
+           [enabled]="mapEnabled"
+           [markerText]="'<h3>' + user.firstName + ' ' + user.lastName + '</h3>' + user.city + ', ' + user.state.name"></cm-map>
+    </div>
+  </div>
+</div>   
+<div *ngIf="!user" class="row">
+   No user found
+</div>  
