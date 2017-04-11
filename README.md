@@ -11,7 +11,7 @@
 1. Go to http://localhost:3000 in your browser
 
 <!--![](src/images/screenshots/UserManagement.gif)-->
-<center><img width="500" src="src/images/screenshots/CardView.png" border="0" /></center>
+<center><img width="1000" src="src/images/screenshots/CardView.png" border="0" /></center>
 
 The goal of this User Management System app is to provide
 a simple way to get started with Angular 2+ while also showing several key Angular features. 
