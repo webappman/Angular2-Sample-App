@@ -10,7 +10,8 @@
 
 1. Go to http://localhost:3000 in your browser
 
-![](src/images/screenshots/UserManagement.gif)
+<!--![](src/images/screenshots/UserManagement.gif)-->
+<center><img width="500" src="src/images/screenshots/CardView.png" border="0" /></center>
 
 The goal of this User Management System app is to provide
 a simple way to get started with Angular 2+ while also showing several key Angular features. 
@@ -30,10 +31,6 @@ a simple way to get started with Angular 2+ while also showing several key Angul
 
 Simply clone the project or download and extract the .zip to get started. Here are a few
 screenshots from the app:
-
-<center><img width="500" src="src/images/screenshots/CardView.png" border="0" /></center>
-
-<br /><br />
 
 <center><img width="500" src="src/images/screenshots/ListView.png" border="0" /></center>
 
