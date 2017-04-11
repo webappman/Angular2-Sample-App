@@ -32,13 +32,13 @@ a simple way to get started with Angular 2+ while also showing several key Angul
 Simply clone the project or download and extract the .zip to get started. Here are a few
 screenshots from the app:
 
-<center><img width="500" src="src/images/screenshots/ListView.png" border="0" /></center>
+<center><img width="1000" src="src/images/screenshots/ListView.png" border="0" /></center>
 
 <br /><br />
 
-<center><img width="500" src="src/images/screenshots/Orders.png" border="0" /></center>
+<center><img width="1000" src="src/images/screenshots/Orders.png" border="0" /></center>
 
 <br /><br />
 
-<center><img width="500" src="src/images/screenshots/UserDetails.png" border="0" /></center>
+<center><img width="1000" src="src/images/screenshots/UserDetails.png" border="0" /></center>
 
