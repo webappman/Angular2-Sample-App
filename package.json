@@ -1,14 +1,14 @@
 {
-    "name": "angular-jumpstart",
-    "author": "Dan Wahlin",
+    "name": "angular-sample-app",
+    "author": "webappman",
     "version": "2.0.0",
-    "repository": "https://github.com/danwahlin/angular-jumpstart",
+    "repository": "https://github.com/webappman/Angular2-Sample-App",
     "scripts": {
         "clean": "del-cli \"src/app/**/*.js\" \"src/app/**/*.js.map\" \"src/devDist\" \"src/dist\"",
         "build": "npm run clean && webpack --progress --watch",
         "tsc": "tsc",
         "tsc:w": "tsc -w",
-        "start:nodemon": "tsc && concurrently \"tsc -w\" \"nodemon server.js\" ",
+        "start:nodemon": "tsc && concurrently \"tsc -w\" \"nodemon server.js\"  ",
         "start": "tsc && concurrently \"tsc -w\" \"node server.js\" "
     },
     "license": "ISC",
